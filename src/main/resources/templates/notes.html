@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Notebook</title>
+    </head>
+    <body>
+    <h1>My notes</h1>
+        <table>
+            <tr>
+                <th>TITLE NOTE</th>
+                <th>BODY NOTE</th>
+            </tr>
+
+            <tr th:each="p: ${notes}" >
+                <td th:text="${p.nameNote}"></td>
+                <td th:text="${p.bodyNote}"></td>
+            </tr>
+
+        </table>
+
+        <h2>Add new note</h2>
+
+        <form action="/notes" method="post">
+            Name: <input type="text" name="nameNote"><br />
+            Price: <input type="text" name="bodyNote"><br />
+            <button type="submit">Add new note</button>
+        </form>
+    </body>
+</html>
